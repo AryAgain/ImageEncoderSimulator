@@ -1,6 +1,8 @@
-# ImageEncoderSimulator
+# Image Encoder Simulator
 
 A protocol simulation to effectively encode and transport image files. 
+Can be used to transport image file 30% more efficiently by reducing their size without any loss to the original quality,
+
 It is implemented through using various concepts as follow:
 - The packets are divided into multiple smaller chunks to be sent over the network
 - Each packet has a header which will tell the sequence number of that packet
@@ -13,16 +15,18 @@ further prevent from any congestion on the network.
 nAck, which will be sent for dropped package to be resent by the server
 
 
-#### Steps to run : 
+### Steps to run : 
 
 **Client/Sender:**
+
 The module which encodes the image file into bits and sends to the processing server.
 ```
 javac Client1.java
 java Client1 -server localhost -port 2233 -f img.jpg
 ```
 
-**Client/Sender:**
+**Server/Receiver:**
+
 The module which decodes the trasported file back into original image file for viewing.
 ```
 javac Server.java
